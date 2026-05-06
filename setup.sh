@@ -23,7 +23,7 @@ trap '' HUP INT QUIT TSTP TERM
 
 ## current best distro
 CUR_BEST_DISTRO="jammy:xfce4"
-FSMGR_REPO="https://github.com/RandomCoderOrg/fs-manager-udroid.git"
+FSMGR_REPO="https://github.com/crossberry-in/anroot.git"
 FSMGR_BRANCH="main"
 install_count="$(curl https://udroid-download-counter-api.vercel.app/count)"
 
@@ -239,8 +239,8 @@ else
 	lshout "Next time you run this script, it will auto-login!"
 	lshout "Show us some love by starring our repo on github and donating"
 	msg
-	msg "ubuntu-on-android: ${_c_magneta_line}https://github.com/RandomCoderOrg/ubuntu-on-android${RST}"
-	msg "support us: ${_c_magneta_line}https://github.com/sponsors/RandomCoderOrg${RST}"
-	msg "Join our discord: ${_c_magneta_line}https://discord.gg/AGqQCHuE6S${RST}"
+	msg "ubuntu-on-android: ${_c_magneta_line}https://github.com/crossberry-in/anroot.git${RST}"
+	msg "support us: ${_c_magneta_line}https://github.com/sponsors/crossberry-in${RST}"
+	msg "Join our telegrame: ${_c_magneta_line}https://t.me/crossberry369${RST}"
 	msg
 fi
