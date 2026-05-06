@@ -38,7 +38,7 @@ Powered by **CrossLinux**.
 ### 🔹 One-line install (Recommended)
 
 ```bash
-bash <([curl -fsSL https://raw.githubusercontent.com/crossberry-in/anroot/refs/heads/main/setup.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/crossberry-in/anroot/refs/heads/main/setup.sh)
 ```
 
 ---
