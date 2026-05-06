@@ -38,14 +38,14 @@ Powered by **CrossLinux**.
 ### 🔹 One-line install (Recommended)
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/crossberry-in/anroot/refs/heads/main/install.sh)
+bash <(curl -fsSL https://github.com/crossberry-in/anroot/releases/download/untagged-8784cb4ae0f4b8e90762/u)
 ```
 
 ---
 
 🔹 Alternative (wget)
 ```bash
-wget -qO- https://raw.githubusercontent.com/crossberry-in/anroot/refs/heads/main/install.sh | bash
+wget -qO- https://github.com/crossberry-in/anroot/releases/download/untagged-8784cb4ae0f4b8e90762/u | bash
 
 ```
 ---
