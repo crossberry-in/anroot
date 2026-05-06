@@ -1,122 +1,167 @@
-# fs-manager-udroid
 
-A tool manage common things with ubuntu-on-android
-& some scripts and linux apps
 
-## Manual installation
+🧾 Full README.md
 
-```bash
-git clone https://github.com/RandomCoderOrg/fs-manager-udroid.git
-cd fs-manager-udroid
-bash install.sh
-```
+# 🚀 Anroot (CrossLinux)
 
-## Usage
+<p align="center">
+  <img src="https://img.shields.io/badge/CrossLinux-Anroot-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Platform-Termux%20%7C%20Android-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Installer-One--Line-orange?style=for-the-badge">
+</p>
 
-```cmd
-udroid <option> [<options>] [<suite>]:[<varient>]
+---
 
-options:
-  install, -i [<options>] <suite>:<varient>  install a distro
-  remove, --remove <suite>:<varient>    remove a distro
-  reset, --reset <suite>:<varient>      reinstalls a distro
-  list, --list [options]                list distros
-  login, --login <suite>:<varient>      login to a distro
-  upgrade, --upgrade                    upgrade udroid scripts
-  help, --help                          show this help message and exit
-  --update-cache                        update cache from remote  
-  --clear-cache                         clear downloaded cache      
-```
+## 📌 About
 
-three main arguments `install`, `login`, `remove`
+**Anroot** is a simple and fast Linux environment installer for Android (Termux).  
+It allows you to install and run Ubuntu with GUI support using a single command.
 
-### install ( `-i` )
+Powered by **CrossLinux**.
 
-```bash
-udroid -i jammy:raw
-```
+---
 
-install argument takes a strings of two words seperated by `:` left side is suite name and right is varient name
+## ✨ Features
 
-More Avalible examples
+- ⚡ One-line installation
+- 🐧 Ubuntu (Jammy XFCE) support
+- 🖥️ GUI via VNC server
+- 📦 Automatic dependency setup
+- 🎨 Custom logo (figlet + lolcat)
+- 🔧 Auto fix for common Termux errors
+- 🚀 Beginner friendly
+
+---
+
+## ⚡ Installation
+
+### 🔹 One-line install (Recommended)
 
 ```bash
-udroid -i impish:raw
-udroid -i impish:xfce
-udroid -i impish:mate
+bash <(curl -fsSL https://raw.githubusercontent.com/crossberry-in/anroot/refs/heads/main/install.sh)
 ```
 
+---
+
+🔹 Alternative (wget)
 ```bash
-udroid -i focal:xfce4
+wget -qO- https://raw.githubusercontent.com/crossberry-in/anroot/refs/heads/main/install.sh | bash
+
 ```
+---
 
-###### help
+▶️ Usage
 
-```cmd
-udroid [ install| -i ] [<options>] [<suite>]:[<varient>]
-installs udroid distros
-options:
-  -h, --help    show this help message and exit
-  --no-verify-integrity  do not verify integrity of filesystem
+🔐 Login to Ubuntu
 
-example:
-  udroid install jammy:raw
-  udroid install --install jammy:raw
+udroid login jammy:xfce4
+
+🖥️ Start GUI Desktop
+
+vncserver :1
+
+
+---
+
+🔑 Default Credentials
+
+Password: secret
+
+
+
+---
+
+📱 Requirements
+
+📦 Termux (latest version)
+
+💾 Minimum 4GB free storage
+
+🌐 Stable internet connection
+
+📲 Android 8+ recommended
+
+
+
+---
+
+🌐 Official Website
+
+👉 https://crossberry.vercel.app
+
+
+---
+
+🛠️ Troubleshooting
+
+❌ curl error / SSL issue
+
+termux-change-repo
+apt update && apt full-upgrade -y
+pkg reinstall curl openssl libngtcp2 -y
+
+
+---
+
+❌ Permission denied
+
+chmod +x install.sh
+
+
+---
+
+❤️ Support
+
+If you like this project:
+
+⭐ Star this repository
+
+🔗 Share with friends
+
+💡 Contribute improvements
+
+
+
+---
+
+🤝 Contributing
+
+Pull requests are welcome.
+For major changes, open an issue first to discuss.
+
+
+---
+
+📄 License
+
+This project is licensed under the MIT License.
+
+
+---
+
+👨‍💻 Author
+
+CrossLinux Team
+
+
+---
+
+🚀 Future Plans
+
+Custom CrossLinux command (crosslinux)
+
+GUI launcher app (APK)
+
+More distro support
+
+Auto updates system
+
+
+
+---
+
+<p align="center">
+  Made with ❤️ by CrossLinux
+</p>
 ```
-
-> `--install` with no extra options install best picked distro ( deprecated )
-
-### login (`login`)
-
-```bash
-udroid --login jammy:raw
-# or
-udroid login jammy:raw # same as above
-```
-
-###### help
-```cmd
-udroid [ login| --login ] [<options>] <suite>:<varient> <cmd>
-login to a suite
-
-options:
-  -h, --help:         show this help message and exit
-  --user:               Allows the user to specify the login user for the filesystem.
-  --name: Allows        the user to specify a custom name for the filesystem to install
-  --bind or -b:         Allows the user to specify extra mount points for the filesystem.
-  --isolated:           Creates an isolated environment for the filesystem.
-  --ashmem-memfd | --memfd     enable support for memfd emulation through ashmem ( experimental )
-  --fix-low-ports:      Fixes low ports for the filesystem.
-  --no-shared-tmp:      Disables shared tmp for the filesystem.
-  --no-link2symlink:    Disables link2symlink for the filesystem.
-  --no-sysvipc:         Disables sysvipc for the filesystem.
-  --no-fake-root-id:    Disables fake root id for the filesystem.
-  --no-cap-last-cap:    Disables cap last cap fix mount for the filesystem.(only per session)
-  --no-kill-on-exit:    Disables kill on exit for the filesystem.
-
-<cmd>:
-  command to run in the filesystem and exit
-```
-
-### remove (`remove`)
-
-```bash
-udroid remove jammy:raw
-```
-
-###### help
-
-```cmd
-udroid [ remove| --remove ] <distro>
-removes udroid distros
-example:
-  udroid remove jammy:raw
-  udroid remove --remove jammy:raw
-```
-
-> Download cache is ignored
-
-
-## Contributing
-
-for now there is no guide for contributing. try to look at code and make a pull request if you have any corrections or improvements ( 💟 )
+---
